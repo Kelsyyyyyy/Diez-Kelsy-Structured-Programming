@@ -1,0 +1,15 @@
+def multiply (a,b):
+    return a*b
+
+print (multiply(3,4))
+
+
+
+counter= 0
+for i in range (4)
+    counter = counter + 1
+print (counter)
+
+
+age =int(input(enter your agr)
+if age 
