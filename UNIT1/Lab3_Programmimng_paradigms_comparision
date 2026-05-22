@@ -1,0 +1,704 @@
+{
+ "nbformat": 4,
+ "nbformat_minor": 0,
+ "metadata": {
+  "colab": {
+   "provenance": [],
+   "toc_visible": true
+  },
+  "kernelspec": {
+   "name": "python3",
+   "display_name": "Python 3"
+  },
+  "language_info": {
+   "name": "python"
+  }
+ },
+ "cells": [
+
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Lab5. Programming Paradigms Comparison\n",
+    "\n",
+    "**Student Name:** Diez Kelsy  \n",
+    "**Group:** 3A  \n",
+    "**Date:** 20/05/2026"
+   ]
+  },
+
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Objective\n",
+    "\n",
+    "You will solve the same problem using different programming paradigms.\n",
+    "\n",
+    "The goal is to understand how the way you think and structure a solution changes depending on the paradigm."
+   ]
+  },
+
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Required Paradigms\n",
+    "\n",
+    "You must implement the solution using ALL of the following paradigms:\n",
+    "\n",
+    "1. Imperative Programming\n",
+    "2. Structured Programming (functions + control structures)\n",
+    "3. Modular Programming\n",
+    "4. Object-Oriented Programming (OOP)\n",
+    "5. Functional Programming (basic level)"
+   ]
+  },
+
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Important Rules\n",
+    "\n",
+    "- The SAME problem must be used in all paradigms.\n",
+    "- You must NOT copy-paste the same solution with small changes.\n",
+    "- Each paradigm must show a different way of structuring the solution.\n",
+    "- Each section must include:\n",
+    "  - explanation in your own words\n",
+    "  - working code\n",
+    "  - a personal modification\n",
+    "  - a short reflection"
+   ]
+  },
+
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Problem Description\n",
+    "\n",
+    "**Describe the problem you will solve:**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# A system that calculates the average grade of students and determines if they pass or fail."
+   ]
+  },
+
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 1. 1. Imperative Programming"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Brief Explanation\n",
+    "\n",
+    "In imperative programming you just write instructions one by one, in order. The computer follows them exactly as you wrote them. There are no functions, no classes — just variables, loops, and conditions. I think of it like giving someone directions step by step: \"first do this, then do that\"."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Code Example\n",
+    "\n",
+    "Complete the steps:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Given data\n",
+    "grades = [70, 80, 90]\n",
+    "total = 0\n",
+    "\n",
+    "# Step 1: Calculate sum using a loop\n",
+    "for grade in grades:\n",
+    "    total += grade\n",
+    "\n",
+    "# Step 2: Compute average\n",
+    "average = total / len(grades)\n",
+    "\n",
+    "# Step 3: Print result\n",
+    "if average >= 70:\n",
+    "    print(f'You pass with {average}')\n",
+    "else:\n",
+    "    print(f'You fail with {average}')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Your Modification\n",
+    "\n",
+    "**What did you change and why?**\n",
+    "\n",
+    "I added more students to the list and used a second loop to go through all of them. I also added the highest grade to the output because I thought it would be useful to see who did the best. Everything still runs line by line with no functions."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# my modification: more students and showing the highest grade\n",
+    "\n",
+    "names = [\"Ana\", \"Luis\", \"Maria\"]\n",
+    "grades_list = [[70, 80, 90], [50, 40, 60], [85, 90, 95]]\n",
+    "\n",
+    "i = 0\n",
+    "while i < len(names):\n",
+    "    total = 0\n",
+    "    highest = grades_list[i][0]\n",
+    "\n",
+    "    for g in grades_list[i]:\n",
+    "        total += g\n",
+    "        if g > highest:\n",
+    "            highest = g\n",
+    "\n",
+    "    average = total / len(grades_list[i])\n",
+    "\n",
+    "    if average >= 70:\n",
+    "        print(f\"{names[i]}: average = {average:.1f}, highest grade = {highest} --> PASS\")\n",
+    "    else:\n",
+    "        print(f\"{names[i]}: average = {average:.1f}, highest grade = {highest} --> FAIL\")\n",
+    "\n",
+    "    i += 1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Reflection\n",
+    "\n",
+    "**What did you learn from this approach and how does it compare to others?**\n",
+    "\n",
+    "This was the easiest to understand because you just read from top to bottom. But I noticed that if I needed to do the same thing for a different group I would have to copy everything again. The code gets long fast and there's no way to reuse anything. It works for small things but I can see why it's not great for bigger programs."
+   ]
+  },
+
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 1. 2. Structured Programming"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Brief Explanation\n",
+    "\n",
+    "Here you split the code into functions. Each function does one thing. Instead of writing the same steps over and over, you define them once in a function and then just call it. It makes the code shorter and easier to read. The control structures (if, for) are the same but now they live inside organized functions."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Code Example\n",
+    "\n",
+    "Complete the steps:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Step 1: function to get the average\n",
+    "def get_average(grades):\n",
+    "    total = 0\n",
+    "    for g in grades:\n",
+    "        total += g\n",
+    "    return total / len(grades)\n",
+    "\n",
+    "# Step 2: function to check if the student passes\n",
+    "def check_status(average):\n",
+    "    if average >= 70:\n",
+    "        return \"PASS\"\n",
+    "    else:\n",
+    "        return \"FAIL\"\n",
+    "\n",
+    "# Step 3: call the functions\n",
+    "grades = [70, 80, 90]\n",
+    "avg = get_average(grades)\n",
+    "result = check_status(avg)\n",
+    "print(f\"Average: {avg:.1f} - {result}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Your Modification\n",
+    "\n",
+    "**What did you change and why?**\n",
+    "\n",
+    "I added a third function called `show_result` that prints the name, average, and status all together. That way I only need one line to display each student instead of doing it manually every time. I tested it with three students."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# my modification: added a function to print everything together\n",
+    "\n",
+    "def get_average(grades):\n",
+    "    total = 0\n",
+    "    for g in grades:\n",
+    "        total += g\n",
+    "    return total / len(grades)\n",
+    "\n",
+    "def check_status(average):\n",
+    "    if average >= 70:\n",
+    "        return \"PASS\"\n",
+    "    else:\n",
+    "        return \"FAIL\"\n",
+    "\n",
+    "def show_result(name, grades):\n",
+    "    avg = get_average(grades)\n",
+    "    status = check_status(avg)\n",
+    "    print(f\"{name}: {avg:.1f} --> {status}\")\n",
+    "\n",
+    "# testing with three students\n",
+    "show_result(\"Ana\",   [70, 80, 90])\n",
+    "show_result(\"Luis\",  [50, 40, 60])\n",
+    "show_result(\"Maria\", [85, 90, 95])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Reflection\n",
+    "\n",
+    "**What did you learn from this approach and how does it compare to others?**\n",
+    "\n",
+    "Using functions made everything a lot cleaner. I don't repeat the same loop every time I need an average. If I want to change how the average is calculated I only fix it in one place. Compared to imperative, this already feels much more organized. The only thing I noticed is that the student's name and grades are still separate — they don't really belong to each other, you just pass them around."
+   ]
+  },
+
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 1. 3. Modular Programming"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Brief Explanation\n",
+    "\n",
+    "In modular programming you separate the code into groups that each handle one topic. One group handles the data, another one handles the calculations, and another one handles what gets printed. They work independently and you connect them at the end. It's like having different departments in a company — each one does its own job."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Code Example\n",
+    "\n",
+    "Complete the steps:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# --- DATA module: only stores the student info ---\n",
+    "def get_students():\n",
+    "    return [\n",
+    "        {\"name\": \"Ana\",   \"grades\": [70, 80, 90]},\n",
+    "        {\"name\": \"Luis\",  \"grades\": [50, 40, 60]},\n",
+    "        {\"name\": \"Maria\", \"grades\": [85, 90, 95]},\n",
+    "    ]\n",
+    "\n",
+    "# --- LOGIC module: only does the math ---\n",
+    "def calculate(student):\n",
+    "    avg = sum(student[\"grades\"]) / len(student[\"grades\"])\n",
+    "    passed = avg >= 70\n",
+    "    return {\"name\": student[\"name\"], \"average\": avg, \"passed\": passed}\n",
+    "\n",
+    "# --- REPORT module: only prints ---\n",
+    "def show(result):\n",
+    "    status = \"PASS\" if result[\"passed\"] else \"FAIL\"\n",
+    "    print(f\"{result['name']}: {result['average']:.1f} --> {status}\")\n",
+    "\n",
+    "# --- connect everything ---\n",
+    "for student in get_students():\n",
+    "    result = calculate(student)\n",
+    "    show(result)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Your Modification\n",
+    "\n",
+    "**What did you change and why?**\n",
+    "\n",
+    "I added a summary section at the end that counts how many students passed and how many failed. I kept it as a separate block so it doesn't mix with the individual results. That way each part of the code still has its own job."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# my modification: added a summary at the end\n",
+    "\n",
+    "# --- DATA module ---\n",
+    "def get_students():\n",
+    "    return [\n",
+    "        {\"name\": \"Ana\",   \"grades\": [70, 80, 90]},\n",
+    "        {\"name\": \"Luis\",  \"grades\": [50, 40, 60]},\n",
+    "        {\"name\": \"Maria\", \"grades\": [85, 90, 95]},\n",
+    "    ]\n",
+    "\n",
+    "# --- LOGIC module ---\n",
+    "def calculate(student):\n",
+    "    avg = sum(student[\"grades\"]) / len(student[\"grades\"])\n",
+    "    passed = avg >= 70\n",
+    "    return {\"name\": student[\"name\"], \"average\": avg, \"passed\": passed}\n",
+    "\n",
+    "# --- REPORT module ---\n",
+    "def show(result):\n",
+    "    status = \"PASS\" if result[\"passed\"] else \"FAIL\"\n",
+    "    print(f\"{result['name']}: {result['average']:.1f} --> {status}\")\n",
+    "\n",
+    "# --- SUMMARY module (new) ---\n",
+    "def show_summary(results):\n",
+    "    passed = 0\n",
+    "    failed = 0\n",
+    "    for r in results:\n",
+    "        if r[\"passed\"]:\n",
+    "            passed += 1\n",
+    "        else:\n",
+    "            failed += 1\n",
+    "    print(\"---\")\n",
+    "    print(f\"Total passed: {passed}\")\n",
+    "    print(f\"Total failed: {failed}\")\n",
+    "\n",
+    "# --- connect everything ---\n",
+    "all_results = []\n",
+    "for student in get_students():\n",
+    "    result = calculate(student)\n",
+    "    show(result)\n",
+    "    all_results.append(result)\n",
+    "\n",
+    "show_summary(all_results)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Reflection\n",
+    "\n",
+    "**What did you learn from this approach and how does it compare to others?**\n",
+    "\n",
+    "I liked that each block has a clear job. If I only want to change how things are printed I just touch the report part and nothing else breaks. Compared to structured programming, this feels more organized because the functions are grouped by purpose, not just defined randomly. It takes a bit more planning at the start but it pays off when the program gets bigger."
+   ]
+  },
+
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 1. 4. Object-Oriented Programming (OOP)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Brief Explanation\n",
+    "\n",
+    "In OOP you create classes, which are like templates. From a class you can create objects, and each object has its own data and its own actions. For example, a Student object has a name, has grades, and knows how to calculate its own average. Everything about a student lives in one place instead of being scattered across different variables and functions."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Code Example\n",
+    "\n",
+    "Complete the steps:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Step 1: create the Student class\n",
+    "class Student:\n",
+    "    def __init__(self, name, grades):\n",
+    "        self.name = name\n",
+    "        self.grades = grades\n",
+    "\n",
+    "    # Step 2: method to get the average\n",
+    "    def get_average(self):\n",
+    "        return sum(self.grades) / len(self.grades)\n",
+    "\n",
+    "    # Step 3: method to check pass or fail\n",
+    "    def get_status(self):\n",
+    "        if self.get_average() >= 70:\n",
+    "            return \"PASS\"\n",
+    "        else:\n",
+    "            return \"FAIL\"\n",
+    "\n",
+    "    def show(self):\n",
+    "        print(f\"{self.name}: {self.get_average():.1f} --> {self.get_status()}\")\n",
+    "\n",
+    "\n",
+    "# Step 4: create objects and use them\n",
+    "s1 = Student(\"Ana\", [70, 80, 90])\n",
+    "s2 = Student(\"Luis\", [50, 40, 60])\n",
+    "s3 = Student(\"Maria\", [85, 90, 95])\n",
+    "\n",
+    "s1.show()\n",
+    "s2.show()\n",
+    "s3.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Your Modification\n",
+    "\n",
+    "**What did you change and why?**\n",
+    "\n",
+    "I added a method called `get_highest()` that returns the highest grade of the student. I also put all students in a list and used a for loop to call `show()` on each one, which is cleaner than calling them one by one."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# my modification: added get_highest() method and a student list\n",
+    "\n",
+    "class Student:\n",
+    "    def __init__(self, name, grades):\n",
+    "        self.name = name\n",
+    "        self.grades = grades\n",
+    "\n",
+    "    def get_average(self):\n",
+    "        return sum(self.grades) / len(self.grades)\n",
+    "\n",
+    "    def get_status(self):\n",
+    "        if self.get_average() >= 70:\n",
+    "            return \"PASS\"\n",
+    "        else:\n",
+    "            return \"FAIL\"\n",
+    "\n",
+    "    def get_highest(self):\n",
+    "        highest = self.grades[0]\n",
+    "        for g in self.grades:\n",
+    "            if g > highest:\n",
+    "                highest = g\n",
+    "        return highest\n",
+    "\n",
+    "    def show(self):\n",
+    "        avg = self.get_average()\n",
+    "        top = self.get_highest()\n",
+    "        print(f\"{self.name}: avg={avg:.1f}, best={top} --> {self.get_status()}\")\n",
+    "\n",
+    "\n",
+    "# list of students\n",
+    "students = [\n",
+    "    Student(\"Ana\",   [70, 80, 90]),\n",
+    "    Student(\"Luis\",  [50, 40, 60]),\n",
+    "    Student(\"Maria\", [85, 90, 95]),\n",
+    "]\n",
+    "\n",
+    "for s in students:\n",
+    "    s.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Reflection\n",
+    "\n",
+    "**What did you learn from this approach and how does it compare to others?**\n",
+    "\n",
+    "OOP felt different because now the student \"knows\" things about itself. I don't have to pass the name and grades to every function — the object already has them. Compared to modular programming, the data and the logic are in the same place, which makes more sense to me. It was a little confusing at first with `self` but once I understood it, adding new methods was easy."
+   ]
+  },
+
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## 1. 5. Functional Programming (basic)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Brief Explanation\n",
+    "\n",
+    "In functional programming you use functions that don't change anything — they just receive data and return new data. Instead of loops you use map() and filter(). map() applies a function to every item in a list. filter() keeps only the items that match a condition. The idea is that nothing gets modified, you just transform the data step by step."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Code Example\n",
+    "\n",
+    "Complete the steps:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# given data\n",
+    "students = [\n",
+    "    {\"name\": \"Ana\",   \"grades\": [70, 80, 90]},\n",
+    "    {\"name\": \"Luis\",  \"grades\": [50, 40, 60]},\n",
+    "    {\"name\": \"Maria\", \"grades\": [85, 90, 95]},\n",
+    "]\n",
+    "\n",
+    "# Step 1: pure function to add the average to each student\n",
+    "def add_average(student):\n",
+    "    avg = sum(student[\"grades\"]) / len(student[\"grades\"])\n",
+    "    return {\"name\": student[\"name\"], \"average\": avg}\n",
+    "\n",
+    "# Step 2: use map to apply the function to all students\n",
+    "with_averages = list(map(add_average, students))\n",
+    "\n",
+    "# Step 3: use filter to get only the ones that pass\n",
+    "passing = list(filter(lambda s: s[\"average\"] >= 70, with_averages))\n",
+    "\n",
+    "print(\"All students:\")\n",
+    "for s in with_averages:\n",
+    "    print(f\"  {s['name']}: {s['average']:.1f}\")\n",
+    "\n",
+    "print(\"\\nPassing:\")\n",
+    "for s in passing:\n",
+    "    print(f\"  {s['name']}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Your Modification\n",
+    "\n",
+    "**What did you change and why?**\n",
+    "\n",
+    "I added a second filter to get the students who fail, and then printed both groups separately. I also added the pass/fail label in the `add_average` function so each student already carries their status with them after the map step."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# my modification: added status in the function and split into two groups\n",
+    "\n",
+    "students = [\n",
+    "    {\"name\": \"Ana\",   \"grades\": [70, 80, 90]},\n",
+    "    {\"name\": \"Luis\",  \"grades\": [50, 40, 60]},\n",
+    "    {\"name\": \"Maria\", \"grades\": [85, 90, 95]},\n",
+    "]\n",
+    "\n",
+    "# pure function: takes a student, returns student with average and status\n",
+    "def evaluate(student):\n",
+    "    avg = sum(student[\"grades\"]) / len(student[\"grades\"])\n",
+    "    status = \"PASS\" if avg >= 70 else \"FAIL\"\n",
+    "    return {\"name\": student[\"name\"], \"average\": avg, \"status\": status}\n",
+    "\n",
+    "# map: apply evaluate to every student\n",
+    "results = list(map(evaluate, students))\n",
+    "\n",
+    "# filter: split into two groups\n",
+    "passing = list(filter(lambda s: s[\"status\"] == \"PASS\", results))\n",
+    "failing = list(filter(lambda s: s[\"status\"] == \"FAIL\", results))\n",
+    "\n",
+    "print(\"Passing students:\")\n",
+    "for s in passing:\n",
+    "    print(f\"  {s['name']}: {s['average']:.1f}\")\n",
+    "\n",
+    "print(\"\\nFailing students:\")\n",
+    "for s in failing:\n",
+    "    print(f\"  {s['name']}: {s['average']:.1f}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Reflection\n",
+    "\n",
+    "**What did you learn from this approach and how does it compare to others?**\n",
+    "\n",
+    "This was the most different way of thinking for me. Instead of saying \"go through each student and do this\", you say \"apply this function to all of them\" and map does the work. filter was also easy to understand once I saw what it does — it's like a sieve that only lets certain items through. Compared to the other paradigms, there are no variables changing values, which I think makes it safer. The hardest part was getting used to not writing loops."
+   ]
+  },
+
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "## Summary\n",
+    "\n",
+    "| Paradigm | Main idea | What I liked | What was hard |\n",
+    "|----------|-----------|--------------|---------------|\n",
+    "| Imperative | Step by step instructions | Easy to follow | Gets long and hard to reuse |\n",
+    "| Structured | Split into functions | Clean and reusable | Data still travels separately |\n",
+    "| Modular | Groups by responsibility | Easy to change one part | Need more planning upfront |\n",
+    "| OOP | Objects with data and methods | Everything in one place | `self` was confusing at first |\n",
+    "| Functional | Transform data with map/filter | No variables changing | Hard to stop thinking in loops |"
+   ]
+  }
+
+ ]
+}
