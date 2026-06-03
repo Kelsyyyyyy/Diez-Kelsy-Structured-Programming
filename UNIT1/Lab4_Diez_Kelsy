@@ -1,0 +1,41 @@
+
+#Lab4 Institutional email generator
+#Students will create a function that automatically generates an institutional email address from a person's first name lastnamje
+
+#Varoable declaration
+#name = "Kelsy"
+#lastname = "Diez"
+
+#def generate_email (name, lastname):
+    #email = f"{name.lower()}.{lastname.lower()}@utd.edu.mx"
+    #return email 
+#main program
+#generated_email = generate_email(name, lastname)
+#print ("Your institutional email is:",generated_email)
+
+
+
+
+
+name = input("Ingresa tu nombre:")
+lastname = input ("Ingresa tu apellido:")
+
+repetir = 'si'
+while repetir.lower() == "si":
+
+    def generate_email (name, lastname):
+        email = f"{name}.{lastname}@utd.edu.mx"
+        return email 
+
+    generated_email = generate_email(name, lastname)
+
+    print ("Tu email es:",generated_email)
+
+repetir = input(f"Deseas captutrar otro email?(Si/No)").lower()
+
+print("Presiona cualquier letra para salir")
+
+
+
+
+#validate-password-straight
