@@ -1,0 +1,33 @@
+def show_menu():
+    print("Select a genre:")
+    print("1. Comedy")
+    print("2. Drama")
+    print("3. Documentary")
+
+def get_genre():
+    option = input("Option: ")
+    return option
+
+def recommend_content(genre):
+    recommendations = {
+        "1": ["The Office", "Brooklyn Nine-Nine"],
+        "2": ["Breaking Bad", "The Crown"],
+        "3": ["Planet Earth", "Inside Job"]
+    }
+    return recommendations.get(genre, ["Invalid option"])
+
+def main():
+    while True:
+        show_menu()
+        choice = get_genre()
+        recs = recommend_content(choice)
+        
+        print("\nRecommendations:")
+        for r in recs:
+            print("-", r)
+        
+        again = input("\nWould you like to perform another search? (Y/N): ")
+        if again.lower() != "y":
+            print("Goodbye!")
+            break
+main()
