@@ -26,8 +26,8 @@ def main():
         for r in recs:
             print("-", r)
         
-        again = input("\nWould you like to perform another search? (Y/N): ")
-        if again.lower() != "y":
+        again = input("\nWould you like to perform another search? (Y/N): ").upper()
+        if again != "y":
             print("Goodbye!")
             break
 main()
